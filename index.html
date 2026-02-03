@@ -1,35 +1,31 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S&H Global Trade Corp | Master Plan</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Noto+Sans+KR:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>S&H Global Trade Corp | Business Master Plan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
-        :root { --gold: #c5a059; --navy: #001220; --white: #ffffff; }
+        :root { --gold: #c5a059; --dark: #0a0a0a; --white: #ffffff; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Noto Sans KR', sans-serif; background: #000; color: #fff; overflow-x: hidden; scroll-snap-type: y mandatory; }
+        body { font-family: 'Montserrat', sans-serif; background: var(--dark); color: var(--white); overflow-x: hidden; scroll-snap-type: y mandatory; }
         
         section { width: 100%; height: 100vh; position: relative; scroll-snap-align: start; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-        
-        /* 배경 동영상 및 이미지 설정 */
-        .bg-media { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; filter: brightness(0.35); object-fit: cover; }
-        
+        .bg-media { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; filter: brightness(0.3); object-fit: cover; }
         .container { position: relative; z-index: 10; width: 85%; max-width: 1400px; }
-        .slide-num { font-family: 'Montserrat'; color: var(--gold); font-size: 1.5rem; letter-spacing: 5px; }
-        .title { font-family: 'Montserrat'; font-size: 4.5rem; font-weight: 900; margin: 20px 0; line-height: 1.1; }
         
-        /* 텍스트 내용 상세 배치 (주인님 텍스트 100% 반영) */
-        .grid-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .info-card { background: rgba(255,255,255,0.08); padding: 30px; border-top: 2px solid var(--gold); backdrop-filter: blur(10px); }
-        .info-card h3 { color: var(--gold); margin-bottom: 15px; font-size: 1.3rem; }
-        .info-card p { font-size: 1rem; line-height: 1.7; opacity: 0.9; }
-        .info-card ul { list-style: none; padding: 0; }
-        .info-card li { margin-bottom: 8px; font-size: 0.95rem; position: relative; padding-left: 15px; }
-        .info-card li::before { content: '•'; position: absolute; left: 0; color: var(--gold); }
-
-        header { position: fixed; top: 40px; left: 5%; z-index: 1000; font-family: 'Montserrat'; font-weight: 900; font-size: 1.8rem; }
+        /* Typography */
+        header { position: fixed; top: 40px; left: 5%; z-index: 1000; font-size: 1.8rem; font-weight: 900; letter-spacing: 2px; }
         header span { color: var(--gold); }
+        .slide-title { font-size: 4.5rem; font-weight: 900; margin-bottom: 30px; line-height: 1; text-transform: uppercase; }
+        .slide-title span { color: var(--gold); display: block; font-size: 1.2rem; letter-spacing: 5px; margin-bottom: 15px; }
+
+        /* Content Grid */
+        .master-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px; }
+        .card { background: rgba(255,255,255,0.05); padding: 30px; border-left: 3px solid var(--gold); backdrop-filter: blur(10px); }
+        .card h3 { color: var(--gold); margin-bottom: 15px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .card p, .card li { font-size: 0.9rem; line-height: 1.7; opacity: 0.8; margin-bottom: 8px; list-style: none; }
+        .card strong { color: var(--white); }
     </style>
 </head>
 <body>
@@ -37,44 +33,46 @@
     <header>S&H <span>GLOBAL</span></header>
 
     <section>
-        <video class="bg-media" autoplay muted loop><source src="https://assets.mixkit.co/videos/preview/mixkit-world-map-dots-and-lines-connectivity-background-video-12165-large.mp4" type="video/mp4"></video>
+        <video class="bg-media" autoplay muted loop poster="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1920&q=80">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-world-map-dots-and-lines-connectivity-background-video-12165-large.mp4" type="video/mp4">
+        </video>
         <div class="container">
-            <span class="slide-num">01. ABOUT US</span>
-            <h1 class="title">S&H Global <br>Trading Corp.</h1>
-            <div class="grid-box">
-                <div class="info-card">
-                    <h3>Company Profile</h3>
-                    <ul>
-                        <li><strong>대표이사:</strong> 한주희 (Jeffrey Han)</li>
-                        <li><strong>설립일:</strong> 2014년</li>
-                        <li><strong>주소:</strong> 13740 N Highway 183 STE K1, AUSTIN, TX 78750</li>
-                    </ul>
+            <h2 class="slide-title"><span>01. ABOUT US</span>Company Overview</h2>
+            <div class="master-grid">
+                <div class="card">
+                    <h3>General Info</h3>
+                    <p><strong>Name:</strong> S&H Global Trading Corp.</p>
+                    <p><strong>CEO:</strong> Ju Hee Han (Jeffrey Han)</p>
+                    <p><strong>Est:</strong> 2014</p>
                 </div>
-                <div class="info-card">
-                    <h3>Key Role</h3>
-                    <p>수입 유통 전문 파트너로서 구매사의 이익을 최우선으로 하며 품질 보증 및 클레임 해결을 책임짐</p>
+                <div class="card">
+                    <h3>Location</h3>
+                    <p>13740 N Highway 183 STE K1, AUSTIN, TX 78750</p>
+                </div>
+                <div class="card">
+                    <h3>Core Role</h3>
+                    <p>Professional import & distribution partner. We prioritize buyer profit, ensure quality assurance, and take full responsibility for claim resolution.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section>
-        <div class="bg-media" style="background: url('https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1920&q=80') center/cover;"></div>
+        <div class="bg-media" style="background: url('https://images.unsplash.com/photo-1454165833772-d996d4951ee2?auto=format&fit=crop&w=1920&q=80') center/cover;"></div>
         <div class="container">
-            <span class="slide-num">02. VISION & VALUES</span>
-            <h1 class="title">Strategic <br>Values</h1>
-            <div class="grid-box">
-                <div class="info-card">
+            <h2 class="slide-title"><span>02. VISION & VALUES</span>Strategic Compass</h2>
+            <div class="master-grid">
+                <div class="card">
                     <h3>Vision</h3>
-                    <p>미국 소비자의 현재 트렌드에 맞춘 소비성 제품 수입 유통 전문 회사</p>
+                    <p>Specialized import/distribution company tailored to current US consumer trends.</p>
                 </div>
-                <div class="info-card">
+                <div class="card">
                     <h3>Future Strategy</h3>
-                    <p>새롭게 접근하는 수입 제품의 미국 내 유통 라인과의 거래 라인 구축 및 공고화</p>
+                    <p>Establishing and consolidating trade lines with US distribution networks for newly introduced products.</p>
                 </div>
-                <div class="info-card">
-                    <h3>Core Value</h3>
-                    <p>우수한 품질의 제품에 대한 공급 프랜차이즈화</p>
+                <div class="card">
+                    <h3>Core Values</h3>
+                    <p>Franchising the supply of high-quality products to ensure market dominance.</p>
                 </div>
             </div>
         </div>
@@ -83,42 +81,42 @@
     <section>
         <div class="bg-media" style="background: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80') center/cover;"></div>
         <div class="container">
-            <span class="slide-num">03. PRODUCT STRATEGY</span>
-            <h2 class="title" style="font-size: 3rem;">Operations Strategy</h2>
-            <div class="grid-box" style="grid-template-columns: repeat(3, 1fr);">
-                <div class="info-card">
-                    <h3>친환경 식품</h3>
-                    <p>(a) 자연 식재료, 간편식, 가격 경쟁력<br>(b) 밀키트, 트렌드 제품 중점<br>(c) 물류 조건 확보 및 이익 보존</p>
+            <h2 class="slide-title"><span>03. PORTFOLIO</span>Product Strategy</h2>
+            <div class="master-grid">
+                <div class="card">
+                    <h3>Eco-Friendly Food</h3>
+                    <p>(a) Natural ingredients, Meal-kits, Price competitiveness<br>(b) Trend-focused products<br>(c) Logistics & profit preservation</p>
                 </div>
-                <div class="info-card">
-                    <h3>가정 잡화/생활용품</h3>
-                    <p>(a) 고효율 생활 잡화<br>(b) 트렌디 디자인<br>(c) 직소싱 통한 원가 절감</p>
+                <div class="card">
+                    <h3>Lifestyle Goods</h3>
+                    <p>(a) High-efficiency household items<br>(b) Trendy designs<br>(c) Cost reduction via direct sourcing</p>
                 </div>
-                <div class="info-card">
-                    <h3>뷰티/IT/레포츠</h3>
-                    <p>글로벌 기능성 제품부터 혁신 IT 소모품, 레포츠 기어까지 내구성 및 인증 준수</p>
+                <div class="card">
+                    <h3>Beauty & IT Accessories</h3>
+                    <p>(a) Functional & global beauty lines<br>(b) Innovation-driven IT peripherals<br>(c) Guaranteed authenticity & certification</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section>
-        <video class="bg-media" autoplay muted loop><source src="https://assets.mixkit.co/videos/preview/mixkit-digital-security-lock-on-a-circuit-board-1730-large.mp4" type="video/mp4"></video>
+        <video class="bg-media" autoplay muted loop>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-security-lock-on-a-circuit-board-1730-large.mp4" type="video/mp4">
+        </video>
         <div class="container">
-            <span class="slide-num">04. STABILIZATION</span>
-            <h1 class="title">Transaction Security</h1>
-            <div class="grid-box">
-                <div class="info-card">
-                    <h3>철저한 비공개 원칙 (NDA)</h3>
-                    <p>거래 상황 및 세부 내역이 외부로 노출되지 않도록 철저한 보안 유지</p>
+            <h2 class="slide-title"><span>04. SECURITY</span>Stabilization</h2>
+            <div class="master-grid">
+                <div class="card">
+                    <h3>Strict Confidentiality</h3>
+                    <p>We strictly adhere to Non-Disclosure Agreements (NDA). All transaction details and partner information are kept 100% private.</p>
                 </div>
-                <div class="info-card">
-                    <h3>예측 가능한 결과</h3>
-                    <p>확고한 계약 체결을 통해 판매 물량의 사전 예측과 결과 데이터 확보</p>
+                <div class="card">
+                    <h3>Predictable Results</h3>
+                    <p>Stable operations through secure contracts and data-driven sales forecasting.</p>
                 </div>
-                <div class="info-card">
-                    <h3>거래처 맞춤 관리</h3>
-                    <p>도매, 소매 유통 배송사, 대형 유통사 밴더 등 형태별 최적화된 계약 관계 구축</p>
+                <div class="card">
+                    <h3>Partner Management</h3>
+                    <p>Customized management for Wholesalers, Retail Distribution, and Major Retail Vendors.</p>
                 </div>
             </div>
         </div>
