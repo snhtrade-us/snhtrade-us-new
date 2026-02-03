@@ -1,114 +1,124 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S&H Global Trading Corp.</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>S&H Global Trade Corp. | Excellence in Global Trade</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #002c5f; --accent: #e74c3c; --text: #333; --light: #f4f7f9; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; color: var(--text); background: #fff; overflow-x: hidden; }
+
+        /* Header & Navigation */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 10%; background: rgba(255,255,255,0.95); position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .logo img { height: 50px; }
+        .nav-links { list-style: none; display: flex; gap: 30px; }
+        .nav-links a { text-decoration: none; color: var(--primary); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* Hero Video Section */
+        .hero { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; overflow: hidden; }
+        .hero video { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -1; transform: translate(-50%, -50%); filter: brightness(0.5); }
+        .hero-content { z-index: 1; max-width: 800px; padding: 0 20px; }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
+        .hero-content p { font-size: 1.2rem; margin-bottom: 30px; font-weight: 300; }
+        .btn { padding: 15px 35px; background: var(--accent); color: #fff; text-decoration: none; border-radius: 50px; font-weight: 600; transition: 0.3s; }
+        .btn:hover { background: #c0392b; transform: scale(1.05); }
+
+        /* Section Styling */
+        section { padding: 100px 10%; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 2.5rem; color: var(--primary); position: relative; display: inline-block; padding-bottom: 10px; }
+        .section-title h2::after { content: ''; position: absolute; width: 50%; height: 3px; background: var(--accent); bottom: 0; left: 25%; }
+
+        /* About & Vision Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: var(--light); padding: 40px; border-radius: 15px; transition: 0.4s; border-bottom: 5px solid transparent; }
+        .card:hover { transform: translateY(-10px); border-bottom: 5px solid var(--accent); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .card h3 { color: var(--primary); margin-bottom: 15px; }
+
+        /* NDA Section */
+        .nda-section { background: var(--primary); color: #fff; text-align: center; }
+        .nda-badge { background: var(--accent); padding: 5px 20px; border-radius: 20px; font-size: 0.8rem; margin-bottom: 20px; display: inline-block; }
+
+        footer { background: #111; color: #777; padding: 50px 10%; text-align: center; }
+        footer p { margin-bottom: 10px; }
+        .contact-info { color: #fff; font-weight: 600; }
+    </style>
 </head>
 <body>
 
-    <header>
-        <div class="container header-flex">
-            <div class="logo">
-                <img src="S&H GLOBAL LOGO.png" alt="S&H Global Logo">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#vision">Vision</a></li>
-                    <li><a href="#business">Business</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<nav>
+    <div class="logo"><img src="logo.png" alt="S&H Logo"></div>
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#business">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
 
-    <section class="hero">
-        <div class="video-background">
-            <video autoplay muted loop playsinline>
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-large-cargo-ship-in-the-middle-of-the-ocean-40012-large.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="hero-overlay">
-            <div class="hero-text">
-                <h1>S&H Global Trading Corp.</h1>
-                <p>Connecting Global Innovation to American Markets</p>
-                <div class="hero-btns">
-                    <a href="#about" class="btn-primary">회사 소개</a>
-                    <a href="#contact" class="btn-secondary">문의하기</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<header class="hero">
+    <video autoplay muted loop playsinline>
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-commercial-vessels-in-a-port-at-sunset-8758-large.mp4" type="video/mp4">
+    </video>
+    <div class="hero-content">
+        <h1>Global Trade Master Plan</h1>
+        <p>Expert Import-Distribution Partners ensuring Quality and Prosperity since 2014.</p>
+        <a href="#about" class="btn">Explore Excellence</a>
+    </div>
+</header>
 
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Us</h2>
-            <div class="about-content">
-                <div class="about-main-text">
-                    <p><strong>S&H Global Trading Corp.</strong>은 2014년 설립 이후, 글로벌 시장의 우수한 제품을 발굴하여 미국 내 최적의 유통 라인에 공급하는 수입 유통 전문 파트너입니다.</p>
-                    <p>단순한 무역을 넘어 품질 보증, 클레임 해결, 그리고 비즈니스 컨설팅까지 통합 솔루션을 제공하며 고객사의 이익을 최우선으로 합니다.</p>
-                </div>
-                <div class="about-info-grid">
-                    <div class="info-item"><i class="fas fa-check-circle"></i> <strong>대표이사:</strong> Jeffrey Han (한주희)</div>
-                    <div class="info-item"><i class="fas fa-check-circle"></i> <strong>설립일:</strong> 2014년</div>
-                    <div class="info-item"><i class="fas fa-check-circle"></i> <strong>주소:</strong> Austin, TX, USA</div>
-                    <div class="info-item"><i class="fas fa-user-shield"></i> <strong>원칙:</strong> 철저한 비공개 보안(NDA) 유지</div>
-                </div>
-            </div>
+<section id="about">
+    <div class="section-title">
+        <h2>Who We Are</h2>
+    </div>
+    <div class="grid">
+        <div class="card">
+            <h3>Company Overview</h3>
+            <p><strong>S&H Global Trading Corp.</strong> is a premier import-distribution specialist. We bridge international suppliers with U.S. markets, prioritizing buyer profit and quality assurance.</p>
         </div>
-    </section>
+        <div class="card">
+            <h3>Global Leadership</h3>
+            <p>Led by CEO <strong>Jeffrey Han</strong>, we leverage decades of expertise to navigate complex supply chains and deliver innovative products to American consumers.</p>
+        </div>
+    </div>
+</section>
 
-    <section id="business" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">Business Areas</h2>
-            <div class="business-grid">
-                <div class="biz-card">
-                    <i class="fas fa-utensils"></i>
-                    <h3>친환경 식품 및 밀키트</h3>
-                    <p>자연 식재료, 트렌디한 밀키트 등 가격 경쟁력을 갖춘 고품질 식품 유통</p>
-                </div>
-                <div class="biz-card">
-                    <i class="fas fa-home"></i>
-                    <h3>가정 잡화 및 생활용품</h3>
-                    <p>고효율 생활 잡화 및 트렌디한 디자인의 라이프스타일 제품 직소싱</p>
-                </div>
-                <div class="biz-card">
-                    <i class="fas fa-magic"></i>
-                    <h3>뷰티 및 코스메틱</h3>
-                    <p>글로벌 기능성 화장품 및 안전성이 입증된 뷰티 라인 공급</p>
-                </div>
-                <div class="biz-card">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>IT 소모품 및 사무용품</h3>
-                    <p>혁신적인 디자인의 IT 주변기기 및 사무용 액세서리 대량 공급</p>
-                </div>
-                <div class="biz-card">
-                    <i class="fas fa-running"></i>
-                    <h3>레포츠 및 생활 보안</h3>
-                    <p>내구성이 검증된 라이프스타일 기어 및 시큐리티 제품 운영</p>
-                </div>
-                <div class="biz-card">
-                    <i class="fas fa-briefcase"></i>
-                    <h3>비즈니스 컨설팅</h3>
-                    <p>외국 기업의 미국 법인 설립 및 시장 안착을 위한 전문 컨설팅</p>
-                </div>
-            </div>
+<section id="vision" style="background: #fdfdfd;">
+    <div class="section-title">
+        <h2>Vision & Values</h2>
+    </div>
+    <div class="grid">
+        <div class="card">
+            <h3>Eco-Friendly & Lifestyle</h3>
+            <p>From organic food ingredients to trendy household goods, we source products that define current U.S. consumer trends.</p>
         </div>
-    </section>
+        <div class="card">
+            <h3>IT & Beauty Innovation</h3>
+            <p>Sourcing global functional beauty lines and high-performance IT peripherals with guaranteed authenticity.</p>
+        </div>
+        <div class="card">
+            <h3>Strategic Expansion</h3>
+            <p>Continuous building and solidifying transaction lines to ensure a resilient economic landscape for all partners.</p>
+        </div>
+    </div>
+</section>
 
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <h3>Contact S&H Global</h3>
-                <p><i class="fas fa-envelope"></i> consulod@gmail.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> 13740 N Highway 183 STE K1, Austin, TX 78750</p>
-                <p class="copyright">&copy; 2026 S&H Global Trading Corp. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+<section class="nda-section">
+    <div class="nda-badge">Confidentiality Guaranteed</div>
+    <h2>Uncompromising Security (NDA)</h2>
+    <p style="max-width: 700px; margin: 20px auto;">We strictly adhere to non-disclosure principles. Your transaction details and business strategies are protected with the highest level of security.</p>
+</section>
+
+<footer id="contact">
+    <p class="contact-info">S&H Global Trading Corp.</p>
+    <p>13740 N Highway 183 STE K1, AUSTIN, TX 78750</p>
+    <p>Email: <span style="color: #fff;">consulod@gmail.com</span> | Phone: <span style="color: #fff;">202-679-0800</span></p>
+    <hr style="margin: 30px 0; border: 0; border-top: 1px solid #333;">
+    <p>&copy; 2024 S&H Global Trading Corp. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
