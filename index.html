@@ -3,121 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S&H Global Trade Corp. | Excellence in Global Trade</title>
+    <title>S&H Global Trade Corp. | Official Website</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root { --primary: #002c5f; --accent: #e74c3c; --text: #333; --light: #f4f7f9; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; color: var(--text); background: #fff; overflow-x: hidden; }
-
-        /* Header & Navigation */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 10%; background: rgba(255,255,255,0.95); position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .logo img { height: 50px; }
-        .nav-links { list-style: none; display: flex; gap: 30px; }
-        .nav-links a { text-decoration: none; color: var(--primary); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
-        .nav-links a:hover { color: var(--accent); }
-
-        /* Hero Video Section */
-        .hero { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; overflow: hidden; }
-        .hero video { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -1; transform: translate(-50%, -50%); filter: brightness(0.5); }
-        .hero-content { z-index: 1; max-width: 800px; padding: 0 20px; }
-        .hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
-        .hero-content p { font-size: 1.2rem; margin-bottom: 30px; font-weight: 300; }
-        .btn { padding: 15px 35px; background: var(--accent); color: #fff; text-decoration: none; border-radius: 50px; font-weight: 600; transition: 0.3s; }
-        .btn:hover { background: #c0392b; transform: scale(1.05); }
-
-        /* Section Styling */
-        section { padding: 100px 10%; }
-        .section-title { text-align: center; margin-bottom: 60px; }
-        .section-title h2 { font-size: 2.5rem; color: var(--primary); position: relative; display: inline-block; padding-bottom: 10px; }
-        .section-title h2::after { content: ''; position: absolute; width: 50%; height: 3px; background: var(--accent); bottom: 0; left: 25%; }
-
-        /* About & Vision Cards */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: var(--light); padding: 40px; border-radius: 15px; transition: 0.4s; border-bottom: 5px solid transparent; }
-        .card:hover { transform: translateY(-10px); border-bottom: 5px solid var(--accent); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .card h3 { color: var(--primary); margin-bottom: 15px; }
-
-        /* NDA Section */
-        .nda-section { background: var(--primary); color: #fff; text-align: center; }
-        .nda-badge { background: var(--accent); padding: 5px 20px; border-radius: 20px; font-size: 0.8rem; margin-bottom: 20px; display: inline-block; }
-
-        footer { background: #111; color: #777; padding: 50px 10%; text-align: center; }
-        footer p { margin-bottom: 10px; }
-        .contact-info { color: #fff; font-weight: 600; }
-    </style>
-</head>
+    <link rel="stylesheet" href="style.css"> </head>
 <body>
 
 <nav>
     <div class="logo"><img src="logo.png" alt="S&H Logo"></div>
     <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#vision">Vision</a></li>
-        <li><a href="#business">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#history">History</a></li>
+        <li><a href="#services">Business</a></li>
+        <li><a href="#nda">Security</a></li>
     </ul>
 </nav>
 
-<header class="hero">
+<section id="home" class="hero">
     <video autoplay muted loop playsinline>
         <source src="https://assets.mixkit.co/videos/preview/mixkit-commercial-vessels-in-a-port-at-sunset-8758-large.mp4" type="video/mp4">
     </video>
     <div class="hero-content">
-        <h1>Global Trade Master Plan</h1>
-        <p>Expert Import-Distribution Partners ensuring Quality and Prosperity since 2014.</p>
-        <a href="#about" class="btn">Explore Excellence</a>
+        <span class="badge">Global Import & Distribution Partner</span>
+        <h1>S&H Global Trade Corp.</h1>
+        <p>Strategic Market Positioning & Excellence in Supply Chain Management</p>
     </div>
-</header>
+</section>
 
 <section id="about">
-    <div class="section-title">
-        <h2>Who We Are</h2>
-    </div>
+    <h2>Company Overview</h2>
     <div class="grid">
         <div class="card">
-            <h3>Company Overview</h3>
-            <p><strong>S&H Global Trading Corp.</strong> is a premier import-distribution specialist. We bridge international suppliers with U.S. markets, prioritizing buyer profit and quality assurance.</p>
+            <h3>Who We Are</h3>
+            <p>Established in 2014, S&H Global Trading Corp. is a specialized import-distribution partner. We prioritize buyer profit through rigorous quality assurance and proactive resolution.</p>
         </div>
         <div class="card">
-            <h3>Global Leadership</h3>
-            <p>Led by CEO <strong>Jeffrey Han</strong>, we leverage decades of expertise to navigate complex supply chains and deliver innovative products to American consumers.</p>
+            <h3>Our Mission</h3>
+            <p>To connect diverse global suppliers with the U.S. market, ensuring a robust supply chain that enhances product availability and fosters regional economic growth.</p>
+        </div>
+        <div class="card">
+            <h3>CEO Message</h3>
+            <p>Under the leadership of <strong>Jeffrey Han</strong>, we leverage expertise to provide strategic market entry for international businesses.</p>
         </div>
     </div>
 </section>
 
-<section id="vision" style="background: #fdfdfd;">
-    <div class="section-title">
-        <h2>Vision & Values</h2>
+<section id="history" style="background: var(--bg-light);">
+    <h2>The Journey of Growth</h2>
+    <div class="timeline">
+        <div class="time-item"><strong>2014:</strong> Established S&H Global Trade Corp.</div>
+        <div class="time-item"><strong>2017:</strong> Identifying emerging consumer trends & product adaptation.</div>
+        <div class="time-item"><strong>2018:</strong> Expansion into business consulting & technical cooperation.</div>
+        <div class="time-item"><strong>2020:</strong> Implementation of advanced prompt-response client service systems.</div>
+        <div class="time-item"><strong>2023:</strong> Strategic expansion into major global overseas markets.</div>
     </div>
+</section>
+
+<section id="services">
+    <h2>Business Portfolio</h2>
     <div class="grid">
-        <div class="card">
-            <h3>Eco-Friendly & Lifestyle</h3>
-            <p>From organic food ingredients to trendy household goods, we source products that define current U.S. consumer trends.</p>
-        </div>
-        <div class="card">
-            <h3>IT & Beauty Innovation</h3>
-            <p>Sourcing global functional beauty lines and high-performance IT peripherals with guaranteed authenticity.</p>
-        </div>
-        <div class="card">
-            <h3>Strategic Expansion</h3>
-            <p>Continuous building and solidifying transaction lines to ensure a resilient economic landscape for all partners.</p>
-        </div>
+        <div class="card"><h3>Eco-Friendly Food</h3><p>Natural ingredients, meal kits, and competitive global sourcing.</p></div>
+        <div class="card"><h3>Household Goods</h3><p>Trendy designs and high-efficiency lifestyle products via direct sourcing.</p></div>
+        <div class="card"><h3>Beauty & Health</h3><p>Global functional cosmetics with proven safety and authenticity.</p></div>
+        <div class="card"><h3>IT & Security</h3><p>Innovative peripherals and lifestyle security gadgets for the U.S. market.</p></div>
     </div>
 </section>
 
-<section class="nda-section">
-    <div class="nda-badge">Confidentiality Guaranteed</div>
-    <h2>Uncompromising Security (NDA)</h2>
-    <p style="max-width: 700px; margin: 20px auto;">We strictly adhere to non-disclosure principles. Your transaction details and business strategies are protected with the highest level of security.</p>
+<section id="nda">
+    <div class="nda-box">
+        <span class="badge">Strict Confidentiality</span>
+        <h2>NDA & Security Principles</h2>
+        <p>S&H Global Trade Corp. operates with a strict <strong>Non-Disclosure Agreement</strong> policy. We ensure that transaction details, client strategies, and sensitive data are never exposed to external parties.</p>
+        <p style="margin-top: 20px; font-style: italic; opacity: 0.8;">"Your trust is our most valuable asset."</p>
+    </div>
 </section>
 
-<footer id="contact">
-    <p class="contact-info">S&H Global Trading Corp.</p>
+<footer>
+    <p><strong>S&H Global Trading Corp.</strong></p>
     <p>13740 N Highway 183 STE K1, AUSTIN, TX 78750</p>
-    <p>Email: <span style="color: #fff;">consulod@gmail.com</span> | Phone: <span style="color: #fff;">202-679-0800</span></p>
-    <hr style="margin: 30px 0; border: 0; border-top: 1px solid #333;">
-    <p>&copy; 2024 S&H Global Trading Corp. All Rights Reserved.</p>
+    <p>Email: consulod@gmail.com | Phone: 202-679-0800</p>
+    <p style="font-size: 0.8rem; margin-top: 20px;">&copy; 2024 S&H Global Trade Corp. All Rights Reserved.</p>
 </footer>
 
 </body>
