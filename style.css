@@ -1,44 +1,70 @@
+/* S&H Global Trade Corp. Official Styling */
 :root {
-    --primary: #002c5f; /* 신뢰감 있는 네이비 */
-    --accent: #e74c3c;  /* 역동적인 레드 */
-    --bg-light: #f8f9fa;
-    --text-dark: #2d3436;
+    --navy: #002c5f;
+    --red: #e74c3c;
+    --light-gray: #f9f9f9;
+    --white: #ffffff;
+    --transition: all 0.3s ease;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Poppins', sans-serif; color: var(--text-dark); line-height: 1.7; overflow-x: hidden; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; line-height: 1.6; }
 
 /* Navigation */
-nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 8%; background: #fff; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
-.logo img { height: 45px; transition: 0.3s; }
-.nav-links { list-style: none; display: flex; gap: 25px; }
-.nav-links a { text-decoration: none; color: var(--primary); font-weight: 600; font-size: 0.95rem; }
+nav {
+    position: fixed; width: 100%; top: 0; background: rgba(255,255,255,0.95);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 8%; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.logo img { height: 50px; }
+.nav-links { list-style: none; display: flex; gap: 2rem; }
+.nav-links a { text-decoration: none; color: var(--navy); font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
+.nav-links a:hover { color: var(--red); }
 
-/* Full Page Sections */
-section { min-height: 100vh; padding: 120px 10% 80px; display: flex; flex-direction: column; justify-content: center; border-bottom: 1px solid #eee; }
+/* Hero Section */
+.hero {
+    height: 100vh; position: relative; display: flex; align-items: center; justify-content: center;
+    color: var(--white); text-align: center; overflow: hidden;
+}
+.hero video {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover; z-index: -1; filter: brightness(0.5);
+}
+.hero-content h1 { font-size: 4rem; margin-bottom: 1rem; letter-spacing: 2px; }
+.hero-content p { font-size: 1.5rem; font-weight: 300; margin-bottom: 2rem; }
 
-/* Hero Section with Video */
-.hero { position: relative; height: 100vh; color: #fff; text-align: center; justify-content: center; align-items: center; background: #000; }
-.hero video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.6; z-index: 0; }
-.hero-content { z-index: 1; animation: fadeInUp 1s ease; }
-.hero h1 { font-size: 4rem; font-weight: 700; margin-bottom: 20px; letter-spacing: -1px; }
+/* Sections */
+section { padding: 100px 10%; border-bottom: 1px solid #eee; }
+.section-title { text-align: center; margin-bottom: 60px; }
+.section-title h2 { font-size: 2.5rem; color: var(--navy); text-transform: uppercase; }
+.section-title .bar { width: 60px; height: 4px; background: var(--red); margin: 15px auto; }
 
-/* Content Cards & Grids */
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
-.card { background: #fff; padding: 35px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: 0.3s; border-top: 4px solid var(--primary); }
-.card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
-.card h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.3rem; }
+/* Grid Layouts */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.card {
+    background: var(--white); padding: 40px; border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: var(--transition);
+    border-top: 5px solid var(--navy);
+}
+.card:hover { transform: translateY(-10px); }
+.card h3 { margin-bottom: 15px; color: var(--navy); }
 
 /* Timeline (History) */
-.timeline { border-left: 3px solid var(--primary); padding-left: 20px; margin-top: 30px; }
-.time-item { margin-bottom: 25px; position: relative; }
-.time-item::before { content: ''; position: absolute; left: -27px; top: 5px; width: 12px; height: 12px; background: var(--accent); border-radius: 50%; }
-
-/* NDA Section Custom */
-.nda-box { background: var(--primary); color: #fff; padding: 60px; border-radius: 20px; text-align: center; }
-.badge { background: var(--accent); color: #fff; padding: 5px 15px; border-radius: 50px; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 20px; display: inline-block; }
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+.timeline-item {
+    border-left: 3px solid var(--red); padding-left: 20px; margin-bottom: 30px; position: relative;
 }
+.timeline-item::before {
+    content: ''; position: absolute; left: -9px; top: 5px;
+    width: 15px; height: 15px; background: var(--navy); border-radius: 50%;
+}
+.timeline-item span { font-weight: bold; color: var(--red); font-size: 1.2rem; }
+
+/* NDA Box */
+.nda-box {
+    background: var(--navy); color: var(--white); padding: 60px;
+    border-radius: 20px; text-align: center; margin-top: 40px;
+}
+
+/* Footer */
+footer { background: #111; color: #ccc; padding: 60px 10%; text-align: center; }
+.footer-grid { display: grid; grid-template-columns: 1fr 1fr; text-align: left; gap: 40px; }
