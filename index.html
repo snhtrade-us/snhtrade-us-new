@@ -6,49 +6,52 @@
     <title>S&H Global Trade Corp | Professional Master Plan</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --gold: #C5A059; --light-gray: #F4F4F4; --white: #FFFFFF; --dark: #1A1A1A; }
+        :root { --gold: #C5A059; --light: #F9F9F9; --white: #FFFFFF; --dark: #1A1A1A; --text: #333; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--dark); line-height: 1.6; }
+        body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--text); scroll-behavior: smooth; }
         
-        /* Professional Navigation */
-        nav { position: fixed; top: 0; width: 100%; height: 90px; padding: 0 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid #eee; }
-        .logo-area { display: flex; align-items: center; gap: 15px; }
-        .logo-area img { height: 60px; width: auto; object-fit: contain; } /* logo.png 연동 */
-        .brand-text { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--dark); }
-        .brand-text span { color: var(--gold); }
+        /* Navigation with Logo */
+        nav { position: fixed; top: 0; width: 100%; height: 100px; padding: 0 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.98); backdrop-filter: blur(15px); z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.05); }
+        .logo-box { display: flex; align-items: center; gap: 20px; }
+        .logo-box img { height: 70px; width: auto; } /* logo.png 연동 */
+        .logo-box .brand { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--dark); letter-spacing: 1px; }
+        .logo-box .brand span { color: var(--gold); }
 
-        section { min-height: 100vh; padding: 120px 8% 60px; scroll-snap-align: start; }
+        section { min-height: 100vh; padding: 140px 10% 80px; display: flex; flex-direction: column; justify-content: center; border-bottom: 1px solid #eee; }
         
-        /* Hero Video Section */
-        .hero { position: relative; height: 100vh; padding: 0; display: flex; align-items: center; justify-content: center; color: var(--white); background: #000; }
-        .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.6; z-index: 1; }
-        .hero-overlay { position: relative; z-index: 2; text-align: center; max-width: 1000px; }
-        .hero-overlay h1 { font-family: 'Playfair Display', serif; font-size: 4.5rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
-        .hero-overlay p { font-size: 1.2rem; font-weight: 300; letter-spacing: 4px; color: var(--gold); }
+        /* Slide 1: Professional Hero Video */
+        .hero { position: relative; height: 100vh; padding: 0; overflow: hidden; color: var(--white); text-align: center; }
+        .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: brightness(0.5); }
+        .hero-content { position: relative; z-index: 2; top: 50%; transform: translateY(-50%); }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 4.5rem; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 3px; }
+        .hero p { font-size: 1.3rem; font-weight: 300; letter-spacing: 5px; color: var(--gold); }
 
-        /* General Styling */
-        .section-title { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 50px; position: relative; padding-bottom: 15px; }
-        .section-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 80px; height: 4px; background: var(--gold); }
+        /* General Typography */
+        h2 { font-family: 'Playfair Display', serif; font-size: 3.2rem; color: var(--dark); margin-bottom: 50px; position: relative; }
+        h2::after { content: ''; position: absolute; bottom: -15px; left: 0; width: 100px; height: 5px; background: var(--gold); }
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .card { background: var(--light-gray); padding: 40px; border-radius: 0px; transition: 0.4s; border-bottom: 3px solid transparent; }
-        .card:hover { transform: translateY(-10px); background: var(--white); border-bottom: 3px solid var(--gold); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
-        .card h3 { color: var(--gold); margin-bottom: 25px; font-size: 1.4rem; letter-spacing: 1px; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-top: 50px; }
+        .card { background: var(--light); padding: 50px; transition: 0.5s; position: relative; overflow: hidden; border: 1px solid #eee; }
+        .card:hover { transform: translateY(-15px); background: var(--white); box-shadow: 0 30px 60px rgba(0,0,0,0.1); border-color: var(--gold); }
+        .card h3 { color: var(--gold); margin-bottom: 25px; font-size: 1.5rem; text-transform: uppercase; border-bottom: 1px solid #ddd; padding-bottom: 15px; }
         
-        ul { list-style: none; }
-        li { margin-bottom: 12px; font-size: 0.95rem; display: flex; gap: 10px; }
-        li::before { content: '•'; color: var(--gold); font-weight: bold; }
+        .timeline { margin-top: 40px; }
+        .t-item { display: flex; gap: 30px; margin-bottom: 35px; border-left: 3px solid var(--gold); padding-left: 30px; }
+        .year { font-weight: 700; color: var(--gold); font-size: 1.4rem; min-width: 80px; }
+        
+        /* Images Layer */
+        .img-box { width: 100%; height: 250px; background-size: cover; background-position: center; margin-bottom: 20px; border-radius: 5px; }
 
-        .timeline-item { display: flex; gap: 30px; margin-bottom: 30px; border-left: 2px solid var(--gold); padding-left: 25px; }
-        .year { font-weight: 700; color: var(--gold); font-size: 1.2rem; min-width: 60px; }
+        .footer-info { color: var(--text); font-size: 1.1rem; line-height: 2; }
+        .footer-info strong { color: var(--gold); }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo-area">
-            <img src="logo.png" alt="S&H GLOBAL LOGO" onerror="this.src='https://via.placeholder.com/150x60?text=S%26H+GLOBAL'">
-            <div class="brand-text">S&H <span>GLOBAL TRADE</span></div>
+        <div class="logo-box">
+            <img src="logo.png" alt="S&H LOGO" onerror="this.src='https://via.placeholder.com/200x80?text=SH+GLOBAL'">
+            <div class="brand">S&H <span>GLOBAL TRADE</span></div>
         </div>
     </nav>
 
@@ -57,90 +60,94 @@
             <source src="video.mp4" type="video/mp4">
             <source src="https://assets.mixkit.co/videos/preview/mixkit-global-logistics-and-supply-chain-network-30545-large.mp4" type="video/mp4">
         </video>
-        <div class="hero-overlay">
-            <p>PREMIER IMPORT & DISTRIBUTION PARTNER</p>
-            <h1>Global Trade <br>Master Plan</h1>
+        <div class="hero-content">
+            <p>TRUSTED IMPORT & DISTRIBUTION PARTNER</p>
+            <h1>Strategic Market Positioning</h1>
         </div>
     </section>
 
     <section>
-        <h2 class="section-title">Company Profile</h2>
+        <h2>Executive Overview</h2>
         <div class="grid">
             <div class="card">
-                <h3>Executive Leadership</h3>
+                <div class="img-box" style="background-image: url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&w=800&q=80');"></div>
+                <h3>Company Mission</h3>
                 <p><strong>CEO:</strong> JU HEE HAN (Jeffrey Han)</p>
-                <p><strong>Established:</strong> 2014</p>
-                <p><strong>Location:</strong> Austin, Texas, USA</p>
-                <p style="margin-top:15px; color:#777;">S&H Global Trade Corp. specializes in connecting global suppliers with the U.S. market, ensuring a robust supply chain and maximum profitability for our partners.</p>
+                <p>S&H Global Trade Corp. serves as a premier import and distribution partner, prioritizing client profitability and ensuring rigorous quality assurance across all trade channels.</p>
             </div>
             <div class="card">
-                <h3>Core Vision</h3>
-                <p>To become the leading trend-responsive distribution specialist in the North American market.</p>
-                <ul>
-                    <li>Franchising high-quality supply chains.</li>
-                    <li>Professional quality assurance & claim management.</li>
-                    <li>Strategic market positioning for consumer goods.</li>
-                </ul>
+                <div class="img-box" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80');"></div>
+                <h3>Our Vision</h3>
+                <p>To be the leading specialist in importing consumer products tailored to current U.S. market trends, building a solidified distribution network.</p>
             </div>
         </div>
     </section>
 
-    <section style="background-color: #fcfcfc;">
-        <h2 class="section-title">Growth Milestones</h2>
+    <section style="background: #fff;">
+        <h2>Growth Milestones</h2>
+        <div class="timeline">
+            <div class="t-item"><div class="year">2014</div><div><strong>Foundation</strong><br>Establishment of S&H Global Trade Corp. and entry into the global trade industry.</div></div>
+            <div class="t-item"><div class="year">2017</div><div><strong>Trend Adaptation</strong><br>Identifying emerging consumer trends to effectively adapt product portfolios.</div></div>
+            <div class="t-item"><div class="year">2018</div><div><strong>Diversification</strong><br>Expansion into business consulting and technical cooperation agreements.</div></div>
+            <div class="t-item"><div class="year">2020</div><div><strong>Client Focus</strong><br>Optimization of prompt client response systems and service capabilities.</div></div>
+            <div class="t-item"><div class="year">2023</div><div><strong>Global Expansion</strong><br>Strategic entry into overseas markets and increasing global operational reach.</div></div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Eco-Friendly & Healthcare</h2>
         <div class="grid">
-            <div>
-                <div class="timeline-item"><div class="year">2014</div><div><strong>Foundation</strong><br>Entry into the trade industry with a focus on import-distribution.</div></div>
-                <div class="timeline-item"><div class="year">2017</div><div><strong>Trend Analysis</strong><br>Adapting product ranges to emerging US consumer trends.</div></div>
-                <div class="timeline-item"><div class="year">2018</div><div><strong>Diversification</strong><br>Expansion into business consulting and technical cooperation.</div></div>
+            <div class="card">
+                <h3>Eco-Food Strategy</h3>
+                <p>(a) Natural ingredients & meal-kits with extreme price competitiveness.</p>
+                <p>(b) Quick response to shifting consumer preferences.</p>
+                <p>(c) Profit maximization through logistics optimization.</p>
             </div>
-            <div>
-                <div class="timeline-item"><div class="year">2020</div><div><strong>Optimization</strong><br>Established rapid client response systems for enhanced service.</div></div>
-                <div class="timeline-item"><div class="year">2023</div><div><strong>Global Reach</strong><br>Strategic expansion into overseas markets and international trade networks.</div></div>
+            <div class="card">
+                <h3>Healthcare Goods</h3>
+                <p>Sourcing premium medical and wellness products that meet the highest safety standards for the U.S. market.</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: #fff;">
+        <h2>IT & Lifestyle Security</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>IT & Office Supplies</h3>
+                <p>Providing high-efficiency office equipment and innovative premium peripherals with a focus on durability and design.</p>
+            </div>
+            <div class="card">
+                <h3>Personal Security</h3>
+                <p>Innovative security gadgets and lifestyle safety products tailored for modern residential and personal needs.</p>
             </div>
         </div>
     </section>
 
     <section>
-        <h2 class="section-title">Operational Strategy</h2>
+        <h2>Service Specialization</h2>
         <div class="grid">
             <div class="card">
-                <h3>Eco-Friendly Food</h3>
-                <ul>
-                    <li><strong>(a)</strong> Natural ingredients & meal-kits with price edge.</li>
-                    <li><strong>(b)</strong> Rapid adaptation to consumer taste shifts.</li>
-                    <li><strong>(c)</strong> Margin protection via logistics efficiency.</li>
-                </ul>
+                <h3>Import & Distribution</h3>
+                <p>A professional service that provides a "Profit Center" for clients by securing quality assurance and solving complex trade claims.</p>
             </div>
             <div class="card">
-                <h3>IT & Security</h3>
-                <ul>
-                    <li>High-efficiency office equipment and innovative peripherals.</li>
-                    <li>Safety-certified home and personal security gadgets.</li>
-                    <li>Direct sourcing to eliminate middleman costs.</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Beauty & Lifestyle</h3>
-                <ul>
-                    <li>Global functional beauty and skincare lines.</li>
-                    <li>Trendy and durable household/leisure goods.</li>
-                    <li>Certified safety and premium quality standards.</li>
-                </ul>
+                <h3>Business Consulting</h3>
+                <p>Expert consulting on U.S. entity establishment and market entry strategies for international corporations.</p>
             </div>
         </div>
     </section>
 
-    <section style="background-color: #fafafa;">
-        <h2 class="section-title">Privacy & Security</h2>
+    <section style="background: #fff;">
+        <h2>Privacy & Contact</h2>
         <div class="grid">
             <div class="card">
-                <h3>NDA Enforcement</h3>
-                <p>To protect our partners' trade secrets and maintain competitive advantages, S&H Global Trade Corp. operates under strict <strong>Non-Disclosure Agreements</strong>.</p>
-                <p style="margin-top: 10px;">We intentionally do not operate an official public website to ensure 100% confidentiality of transaction details.</p>
+                <h3>Strict NDA Policy</h3>
+                <p><strong>Notice:</strong> S&H Global Trade Corp. does not operate a public website to protect the trade secrets and confidential transaction data of our client companies.</p>
             </div>
-            <div class="card">
-                <h3>Contact Information</h3>
-                <p><strong>HQ:</strong> 13740 N Highway 183 STE K1, Austin, TX 78750</p>
+            <div class="card" class="footer-info">
+                <h3>Get In Touch</h3>
+                <p><strong>Address:</strong> 13740 N Highway 183 STE K1, Austin, TX 78750</p>
                 <p><strong>Email:</strong> consulod@gmail.com</p>
                 <p><strong>Phone:</strong> 202-679-0800 / 571-409-7878</p>
             </div>
