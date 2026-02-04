@@ -3,102 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S&H Global Trade Corp. | Official Business Portal</title>
+    <title>S&H Global Trade Corp. | Official Workspace</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        :root { --gold: #C5A059; --dark: #0a0a0a; --gray: #1a1a1a; }
+        :root { --gold: #C5A059; --dark: #0a0a0a; --gray: #1a1a1a; --white: #ffffff; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--dark); color: #fff; font-family: 'Montserrat', sans-serif; line-height: 1.7; }
+        body { background-color: var(--dark); color: var(--white); font-family: 'Montserrat', sans-serif; line-height: 1.6; }
         
-        /* Navigation */
-        nav { position: fixed; top: 0; width: 100%; padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(10,10,10,0.9); border-bottom: 1px solid rgba(197,160,89,0.3); }
-        .logo { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.5rem; letter-spacing: 2px; }
+        /* 네비게이션 */
+        nav { position: fixed; top: 0; width: 100%; padding: 25px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(10,10,10,0.9); border-bottom: 1px solid var(--gold); }
+        .logo { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.5rem; letter-spacing: 2px; font-weight: 700; }
 
-        /* General Section Style */
-        section { position: relative; width: 100%; padding: 120px 10%; border-bottom: 1px solid #222; overflow: hidden; }
-        .bg-media { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; opacity: 0.3; }
-        .container { position: relative; z-index: 10; max-width: 1100px; }
+        /* 공통 섹션 스타일 */
+        section { position: relative; width: 100%; min-height: 100vh; padding: 120px 8%; display: flex; align-items: center; overflow: hidden; border-bottom: 1px solid #222; }
+        .bg-media { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; opacity: 0.3; transition: transform 0.8s ease; }
+        section:hover .bg-media { transform: scale(1.05); }
+        .container { position: relative; z-index: 10; max-width: 1100px; width: 100%; }
 
-        /* Typography */
-        .category { color: var(--gold); font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 15px; display: block; }
-        h1, h2 { font-family: 'Playfair Display', serif; margin-bottom: 30px; }
-        h1 { font-size: 3.5rem; line-height: 1.2; }
-        h2 { font-size: 2.5rem; color: var(--gold); }
-        p { margin-bottom: 20px; color: rgba(255,255,255,0.8); }
+        /* 텍스트 스타일 */
+        .category { color: var(--gold); font-size: 0.8rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 15px; display: block; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3.8rem; line-height: 1.2; margin-bottom: 30px; }
+        h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--gold); margin-bottom: 35px; }
+        p { margin-bottom: 20px; color: #ddd; font-size: 1.05rem; }
 
-        /* Word Content: Strategy & Operations */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .card { background: rgba(255,255,255,0.05); padding: 30px; border: 1px solid rgba(197,160,89,0.2); }
-        .card h3 { color: var(--gold); margin-bottom: 15px; font-size: 1.2rem; }
-        .card ul { list-style: none; font-size: 0.9rem; color: #ccc; }
-        .card ul li { margin-bottom: 8px; padding-left: 15px; position: relative; }
-        .card ul li::before { content: '•'; position: absolute; left: 0; color: var(--gold); }
+        /* 콘텐츠 박스 (유리창 효과) */
+        .glass-box { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); padding: 45px; border-left: 4px solid var(--gold); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        
+        /* 리스트 및 그리드 */
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .info-card { background: rgba(255,255,255,0.03); padding: 30px; border: 1px solid rgba(197,160,89,0.2); }
+        .info-card h3 { color: var(--gold); margin-bottom: 15px; font-family: 'Playfair Display'; }
+        .info-card ul { list-style: none; }
+        .info-card li { margin-bottom: 10px; font-size: 0.9rem; padding-left: 20px; position: relative; }
+        .info-card li::before { content: '→'; position: absolute; left: 0; color: var(--gold); }
 
-        /* PDF Content: History Timeline */
-        .timeline { border-left: 2px solid var(--gold); padding-left: 30px; margin-left: 20px; }
-        .time-item { margin-bottom: 40px; position: relative; }
-        .time-item::before { content: ''; position: absolute; left: -41px; top: 10px; width: 20px; height: 20px; background: var(--gold); border-radius: 50%; }
-        .time-year { font-weight: 700; color: var(--gold); font-size: 1.2rem; }
+        /* 타임라인 (PDF 연혁) */
+        .timeline { border-left: 2px solid var(--gold); padding-left: 30px; margin: 40px 0; }
+        .time-item { margin-bottom: 35px; position: relative; }
+        .time-item::before { content: ''; position: absolute; left: -41px; top: 8px; width: 20px; height: 20px; background: var(--gold); border-radius: 50%; box-shadow: 0 0 15px var(--gold); }
+        .time-item h4 { font-size: 1.3rem; color: var(--gold); margin-bottom: 5px; }
 
-        @media (max-width: 768px) { h1 { font-size: 2.5rem; } nav { padding: 15px 20px; } }
+        footer { padding: 80px 8% 40px; background: #000; border-top: 1px solid var(--gold); }
+        .footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; }
+        
+        @media (max-width: 768px) { h1 { font-size: 2.5rem; } nav { padding: 15px 25px; } }
     </style>
 </head>
 <body>
 
-    <nav><div class="logo">S&H GLOBAL TRADE</div></nav>
+    <nav>
+        <div class="logo">S&H GLOBAL TRADE</div>
+        <div style="font-size: 0.7rem; color: var(--gold); letter-spacing: 2px;">AUSTIN, TEXAS HQ</div>
+    </nav>
 
     <section>
         <video class="bg-media" autoplay muted loop playsinline><source src="trade_main.mp4" type="video/mp4"></video>
         <div class="container">
-            <span class="category">Company Overview</span>
-            <h1>Strategic Partner in <br>Global Trade</h1>
-            <p><strong>CEO: Jeffrey Han (Ju Hee Han) | Est. 2014</strong></p>
-            <p>Based in Austin, Texas, S&H Global Trade Corp. serves as a specialized import and distribution partner. We prioritize buyer profit, ensure 100% quality guarantee, and take full responsibility for claim resolution.</p>
+            <div class="glass-box">
+                <span class="category">01. Company Profile</span>
+                <h1>Strategic Partner for <br>Global Distribution</h1>
+                <p><strong>CEO: Jeffrey Han (Ju Hee Han) | Est. 2014</strong></p>
+                <p>S&H Global Trading Corp.는 수입 유통 전문 파트너로서 구매사의 이익을 최우선으로 합니다. 텍사스 오스틴 본사를 중심으로 품질 보증 및 모든 클레임 해결을 책임지는 신뢰의 기업입니다.</p>
+                <p style="color: var(--gold); font-weight: 600;">"미국 시장의 최신 트렌드를 선도하는 소비재 전문 공급망의 프랜차이즈화"</p>
+            </div>
         </div>
     </section>
 
     <section>
         <video class="bg-media" autoplay muted loop playsinline><source src="sub_video_01.mp4" type="video/mp4"></video>
         <div class="container">
-            <span class="category">Our Journey</span>
-            <h2>Company Growth</h2>
+            <span class="category">02. Our Journey</span>
+            <h2>History & Milestones</h2>
             <div class="timeline">
-                <div class="time-item"><div class="time-year">2014</div><p>Established S&H Global Trade Corp. Entering the trade industry.</p></div>
-                <div class="time-item"><div class="time-year">2017</div><p>Identifying emerging consumer trends and adapting product ranges.</p></div>
-                <div class="time-item"><div class="time-year">2020</div><p>Systematized prompt client response & enhanced customer service.</p></div>
-                <div class="time-item"><div class="time-year">2023+</div><p>Strategic expansion into global markets and digital transformation.</p></div>
+                <div class="time-item"><h4>2014</h4><p>S&H Global Trade Corp. 설립. 북미 무역 시장 진입.</p></div>
+                <div class="time-item"><h4>2015-2017</h4><p>수입 및 유통 인프라 구축. 소비자 트렌드 분석을 통한 제품군 최적화.</p></div>
+                <div class="time-item"><h4>2018-2020</h4><p>비즈니스 컨설팅 및 기술 협력 확대. 신속한 고객 응대 시스템(CRM) 구축.</p></div>
+                <div class="time-item"><h4>2023-2026</h4><p>글로벌 시장 전략적 확장 및 포트폴리오 안정화 달성.</p></div>
             </div>
         </div>
     </section>
 
     <section>
-        <img src="dist_1.jpg" class="bg-media">
+        <img src="it_2.jpg" class="bg-media">
         <div class="container">
-            <span class="category">Business Strategy</span>
-            <h2>Product & Operation Strategy</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>01. Eco-Friendly Food</h3>
+            <span class="category">03. Business Sectors</span>
+            <h2>Core Operational Strategy</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Eco-Friendly Food</h3>
                     <ul>
-                        <li>Natural ingredients & meal kits</li>
-                        <li>Competitive pricing & trend focus</li>
-                        <li>Optimized logistics for freshness</li>
+                        <li>자연 식재료 제품 및 간편식(HMR) 집중</li>
+                        <li>가격 경쟁력 확보 및 트렌드 맞춤형 소싱</li>
+                        <li>물류 최적화를 통한 신선도 및 이익률 보존</li>
                     </ul>
                 </div>
-                <div class="card">
-                    <h3>02. Household & Beauty</h3>
+                <div class="info-card">
+                    <h3>Beauty & Lifestyle</h3>
                     <ul>
-                        <li>High-efficiency household goods</li>
-                        <li>Global functional beauty lines</li>
-                        <li>Cost reduction via direct sourcing</li>
+                        <li>트렌디한 디자인의 고효율 가정 잡화</li>
+                        <li>글로벌 안전 인증을 획득한 기능성 화장품</li>
+                        <li>직수입 구조를 통한 중간 유통 마진 제거</li>
                     </ul>
                 </div>
-                <div class="card">
-                    <h3>03. IT & Office Supplies</h3>
+                <div class="info-card">
+                    <h3>IT & Security</h3>
                     <ul>
-                        <li>Innovative designs & high performance</li>
-                        <li>Bulk purchasing competitiveness</li>
-                        <li>Latest IT consumables & accessories</li>
+                        <li>고성능 PC 주변기기 및 사무용 소모품</li>
+                        <li>생활 밀착형 보안 제품 및 스마트 가젯</li>
+                        <li>대량 구매 협상력을 통한 최저가 공급</li>
                     </ul>
                 </div>
             </div>
@@ -108,35 +120,35 @@
     <section>
         <video class="bg-media" autoplay muted loop playsinline><source src="sub_video_03.mp4" type="video/mp4"></video>
         <div class="container">
-            <span class="category">Core Value</span>
-            <h2>Stabilization of Transactions</h2>
-            <div class="grid">
-                <div class="card" style="background: rgba(197,160,89,0.15);">
-                    <h3>Strict Confidentiality (NDA)</h3>
-                    <p>We adhere to a zero-disclosure principle. All transaction details remain strictly confidential between S&H and our clients.</p>
-                </div>
-                <div class="card">
-                    <h3>Predictable Results</h3>
-                    <p>Stable operations through advanced inventory forecasting and data-driven contract management.</p>
-                </div>
-                <div class="card">
-                    <h3>Customized Partnerships</h3>
-                    <p>Tailored contracts for Wholesalers, Retail Distribution, and Major Retail Vendors.</p>
+            <div class="glass-box">
+                <span class="category">04. Reliability</span>
+                <h2>Transaction Stabilization</h2>
+                <div class="info-grid">
+                    <div>
+                        <h4 style="color:var(--gold); margin-bottom:15px;">비밀유지 협약 (NDA)</h4>
+                        <p>모든 거래 내역과 구매사 정보에 대해 철저한 비밀 유지 원칙을 준수하여 안정적인 비즈니스 환경을 보장합니다.</p>
+                    </div>
+                    <div>
+                        <h4 style="color:var(--gold); margin-bottom:15px;">안정적 공급망</h4>
+                        <p>주요 리테일 벤더와의 견고한 계약을 통해 사전 판매 예측 및 데이터 기반의 재고 관리를 실현합니다.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer style="padding: 100px 10%; background: #000; border-top: 1px solid #222;">
-        <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px;">
-            <div style="flex: 1; min-width: 300px;">
-                <h2 style="color: var(--gold); margin-bottom: 10px;">Contact Us</h2>
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h2 style="margin-bottom:10px;">S&H GLOBAL TRADE CORP.</h2>
                 <p>13740 N Highway 183 STE K1, Austin, TX 78750</p>
-                <p>Email: consulod@gmail.com</p>
+                <p>Email: consulod@gmail.com | Phone: 202-679-0800 / 571-409-7878</p>
             </div>
-            <div style="flex: 1; min-width: 300px; text-align: right;">
-                <p style="color: var(--gold);">© 2026 S&H Global Trade Corp.</p>
-                <p style="font-size: 0.8rem; color: #555;">All information is protected under Non-Disclosure Agreements.</p>
+            <div style="text-align: right; max-width: 400px;">
+                <p style="font-size: 0.8rem; color: #666;">
+                    * S&H Global Trade Corp.는 고객사와의 비밀유지협약(NDA)에 따라 공식 웹사이트를 대외적으로 운영하지 않으며, 본 페이지는 파트너십 확인을 위한 워크스페이스입니다.
+                </p>
+                <p style="margin-top: 20px; color: var(--gold);">© 2026 S&H Global Trade Corp. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
