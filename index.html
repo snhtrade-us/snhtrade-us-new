@@ -5,37 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>S&H Global Trade Corp.</title>
     <style>
-        body { margin: 0; padding: 0; font-family: sans-serif; background: #000; color: #fff; }
-        section { height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; border-bottom: 2px solid #333; }
-        .bg-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0.7; z-index: -1; }
-        .content { text-align: center; z-index: 10; background: rgba(0,0,0,0.5); padding: 40px; border-radius: 10px; }
-        h1 { font-size: 3.5rem; color: #C5A059; margin: 0; }
-        p { font-size: 1.2rem; letter-spacing: 3px; margin-top: 10px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #000; color: #fff; font-family: sans-serif; }
+        
+        /* 각 섹션 설정 */
+        section { 
+            height: 100vh; 
+            width: 100%; 
+            position: relative; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            overflow: hidden;
+            border-bottom: 1px solid #333;
+        }
+
+        /* 배경 이미지/영상 공통 스타일 */
+        .bg-media {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            opacity: 0.6; /* 글자가 잘 보이게 배경을 약간 어둡게 함 */
+        }
+
+        /* 중앙 글자 콘텐츠 */
+        .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            background: rgba(0,0,0,0.3);
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        h1 { font-size: 4rem; color: #C5A059; margin-bottom: 10px; text-transform: uppercase; }
+        p { font-size: 1.5rem; letter-spacing: 4px; font-weight: 300; }
     </style>
 </head>
 <body>
 
     <section>
-        <div class="bg-img" style="background-image: url('trade_1.jpg');"></div>
+        <img src="trade_1.jpg" class="bg-media" alt="Trade 1">
         <div class="content">
             <h1>Global Trade</h1>
-            <p>S&H Global Strategic Partner</p>
+            <p>S&H Strategic Partner</p>
         </div>
     </section>
 
     <section>
-        <div class="bg-img" style="background-image: url('lifestyle_1.jpg');"></div>
+        <img src="lifestyle_1.jpg" class="bg-media" alt="Lifestyle 1">
         <div class="content">
             <h1>General Merchandise</h1>
-            <p>Premium Lifestyle Solutions</p>
+            <p>Premium Consumer Goods</p>
         </div>
     </section>
 
     <section>
-        <div class="bg-img" style="background-image: url('agri_1.jpg');"></div>
+        <img src="trade_2.jpg" class="bg-media" alt="Trade 2">
         <div class="content">
-            <h1>Eco-Agriculture</h1>
-            <p>Sustainable Supply Chain</p>
+            <h1>Logistics Solution</h1>
+            <p>Connecting Global Markets</p>
+        </div>
+    </section>
+
+    <section>
+        <video class="bg-media" autoplay muted loop playsinline>
+            <source src="trade_main.mp4" type="video/mp4">
+        </video>
+        <div class="content">
+            <h1>Global Vision</h1>
+            <p>Beyond the Boundaries</p>
         </div>
     </section>
 
