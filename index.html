@@ -6,62 +6,104 @@
 <title>S&H Global Trade Corp. - Master Plan</title>
 <style>
   body {
-    margin:0; padding:0; font-family: Arial, sans-serif;
-    background-color: #F3F4F6; color: #111827;
+    margin:0; padding:0;
+    font-family: Arial, sans-serif;
+    background-color: #F3F4F6;
+    color: #111827;
   }
   header {
-    background-color: #1E3A8A; color: white; text-align: center;
-    padding: 25px 20px; position: sticky; top: 0; z-index: 1000;
+    background-color: #1E3A8A;
+    color: white;
+    text-align:center;
+    padding: 25px 20px;
+    position: sticky; top: 0; z-index: 1000;
   }
   .logo {
-    max-height: 80px; margin: 0 auto 10px; display: block;
+    max-height:80px;
+    margin: 0 auto 10px;
+    display:block;
     filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4));
   }
   video.main-video {
-    max-width: 900px; width: 100%; border-radius: 14px;
-    box-shadow: 0 8px 28px rgba(0,0,0,0.3); margin: 20px auto 0 auto;
+    width: 100%;
+    max-width: 900px;
+    border-radius:14px;
+    box-shadow:0 8px 28px rgba(0,0,0,0.3);
+    margin: 20px auto 0;
     display: block;
   }
   nav {
-    background-color: #1E3A8A; display: flex; justify-content: center;
-    gap: 12px; position: sticky; top: 120px; z-index: 999; flex-wrap: wrap;
+    background-color: #1E3A8A;
+    position: sticky;
+    top: 120px;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
   }
   nav a {
-    padding: 10px 16px; color: white; text-decoration: none;
-    font-weight: 600; border-radius: 5px; white-space: nowrap;
-    cursor: pointer; transition: background-color 0.3s ease;
+    padding: 10px 16px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
   }
   nav a.active, nav a:hover {
     background-color: #3B82F6;
   }
   .slides {
     height: calc(100vh - 170px);
-    scroll-snap-type: y mandatory;
     overflow-y: auto;
+    scroll-snap-type: y mandatory;
   }
   section {
     scroll-snap-align: start;
-    padding: 50px 30px 60px 30px;
-    min-height: 100vh; max-width: 960px; margin: 0 auto;
+    min-height: 100vh;
+    max-width: 960px;
+    margin: 0 auto;
     box-sizing: border-box;
+    padding: 50px 30px 60px;
   }
   h2 {
-    font-size: 2.4rem; font-weight: 700; color: #1E3A8A; margin-bottom: 24px;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #1E3A8A;
+    margin-bottom: 24px;
   }
   p, ul {
-    font-size: 1.1rem; line-height: 1.7; margin-bottom: 16px; letter-spacing: 0.04em;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 16px;
+    letter-spacing: 0.04em;
   }
-  ul { padding-left: 28px; }
+  ul {
+    padding-left: 28px;
+  }
   .slide-image {
-    width: 100%; max-width: 720px; border-radius: 14px;
-    margin-top: 24px; box-shadow: 0 6px 20px rgba(0,0,0,0.2); display: block;
+    width: 100%;
+    max-width: 720px;
+    border-radius: 14px;
+    margin-top: 24px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    display: block;
   }
   .products {
-    display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin-top: 30px;
+    display:flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top:30px;
   }
   .products img {
-    width: 28%; min-width: 260px; border-radius: 14px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.18); cursor: pointer;
+    width: 28%;
+    min-width: 260px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+    cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   .products img:hover {
@@ -69,44 +111,55 @@
     box-shadow: 0 18px 45px rgba(0,0,0,0.32);
   }
   .confidentiality-box {
-    background-color: #D1D5DB; border-left: 8px solid #1E3A8A;
-    padding: 28px 32px; border-radius: 12px; font-weight: 600;
-    font-size: 1.25rem; color: #222; max-width: 800px;
-    margin-top: 40px; line-height: 1.8;
+    background-color: #D1D5DB;
+    border-left: 8px solid #1E3A8A;
+    padding: 28px 32px;
+    border-radius:12px;
+    font-weight: 600;
+    font-size:1.25rem;
+    color: #222;
+    max-width: 800px;
+    margin-top: 40px;
+    line-height:1.8;
   }
   footer {
-    background-color: #CBD5E1; text-align: center; padding: 20px 10px;
-    font-size: 14px; color: #374151;
+    background-color: #CBD5E1;
+    text-align:center;
+    padding:20px 10px;
+    font-size:14px;
+    color: #374151;
   }
   @media (max-width: 900px) {
     .products img {
-      width: 45%; min-width: 220px;
+      width: 45%;
+      min-width: 220px;
     }
   }
   @media (max-width: 480px) {
     .products img {
-      width: 90%; min-width: auto;
+      width: 90%;
+      min-width: auto;
     }
     nav {
-      gap: 8px; justify-content: center;
+      gap: 8px;
+      justify-content: center;
     }
     nav a {
-      padding: 10px 14px; font-size: 14px;
+      padding: 10px 14px;
+      font-size: 14px;
     }
   }
 </style>
 </head>
 <body>
-
 <header>
   <img src="logo.png" alt="S&H Global Trade Logo" class="logo" />
   <h1>S&H Global Trade Corp. - Master Plan</h1>
   <video class="main-video" autoplay muted loop playsinline>
-    <source src="sub_video_01.mp4" type="video/mp4" />
+    <source src="sub_video_01.mp4" type="video/mp4"/>
     Your browser does not support the video tag.
   </video>
 </header>
-
 <nav>
   <a href="#vision" class="active">Vision & Values</a>
   <a href="#business">Business Types</a>
@@ -118,7 +171,6 @@
   <a href="#confidentiality">Confidentiality</a>
   <a href="#about">About Us</a>
 </nav>
-
 <div class="slides" id="slides">
   <section id="vision">
     <h2>Vision & Values</h2>
@@ -127,14 +179,12 @@
     <p>We emphasize sustainable growth by establishing franchised distribution lines that reflect quality and reliability.</p>
     <img src="trade_vision.jpg" alt="Vision Illustration" class="slide-image" />
   </section>
-
   <section id="business">
     <h2>Business Types</h2>
     <p><strong>Import-Distribution:</strong> Managing supply chains to maximize client profitability with strict quality control.</p>
     <p><strong>Business Consulting:</strong> Providing comprehensive consulting for foreign companies’ US entity establishment and market entry.</p>
     <img src="trade_business.jpg" alt="Business Operations" class="slide-image" />
   </section>
-
   <section id="products-food">
     <h2>Eco-friendly Foods</h2>
     <p>We offer natural ingredients, ready-to-eat meals, meal kits, and trending products, emphasizing pricing competitiveness and efficient logistics.</p>
@@ -143,50 +193,41 @@
       <img src="food_1.jpg" alt="Food Product" />
     </div>
   </section>
-
   <section id="products-household">
     <h2>Household & Lifestyle Products</h2>
     <p>High-efficiency, trendy daily goods sourced directly to reduce costs and deliver value.</p>
     <img src="household_1.jpg" alt="Household Product" class="slide-image" />
   </section>
-
   <section id="products-cosmetics">
     <h2>Cosmetics & Beauty</h2>
     <p>Certified global functional products providing safety, quality, and authenticity.</p>
     <img src="cosmetics_1.jpg" alt="Cosmetics Product" class="slide-image" />
   </section>
-
   <section id="products-office">
     <h2>Office Supplies & IT Consumables</h2>
     <p>Innovative office equipment and accessories backed by competitive bulk purchasing options.</p>
     <img src="office_1.jpg" alt="Office Supplies" class="slide-image" />
   </section>
-
   <section id="products-leisure">
     <h2>Leisure & Security Products</h2>
     <p>Durable lifestyle gadgets and security devices designed for reliability and flexibility.</p>
     <img src="leisure_1.jpg" alt="Leisure Product" class="slide-image" />
   </section>
-
   <section id="confidentiality">
     <h2>Confidentiality</h2>
     <div class="confidentiality-box">
-      We strictly uphold confidentiality of client transactions and contracts,  
-      ensuring privacy and trust across all business dealings.
+      We strictly uphold confidentiality of client transactions and contracts, ensuring privacy and trust across all business dealings.
     </div>
   </section>
-
   <section id="about">
     <h2>About Us</h2>
     <p>Founded in 2014 by CEO Jeffrey Han, located at 13740 N Highway 183 STE K1, Austin, TX 78750.</p>
     <p>We specialize in import-distribution services prioritizing quality assurance, profitability, and claim resolution.</p>
   </section>
 </div>
-
 <footer>
   <p>&copy; 2026 S&H Global Trade Corp. All rights reserved.</p>
 </footer>
-
 <script>
   const navLinks = document.querySelectorAll('nav a');
   const slides = document.getElementById('slides');
@@ -216,6 +257,5 @@
     });
   });
 </script>
-
 </body>
 </html>
