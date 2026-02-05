@@ -3,53 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SNH Trade Website</title>
+  <title>S&H Global Trade Corp.</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #e9f0ea;
-      color: #333333;
+      color: #333;
       margin: 0;
       padding: 0 20px;
     }
-
     header {
       background-color: #3a7a40;
       color: white;
       padding: 25px 0;
       text-align: center;
     }
-
     .logo {
       max-height: 60px;
       display: block;
       margin: 0 auto 15px;
       filter: drop-shadow(0 1px 1px rgba(0,0,0,0.3));
     }
-
-    h1, h2 {
-      margin: 10px 0;
-      font-weight: 700;
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
     }
-
-    .images-section {
+    h1, h2 {
+      font-weight: 700;
+      color: #2e4b25;
+    }
+    section {
+      margin-bottom: 50px;
+    }
+    .products {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
-      margin: 50px auto 40px;
-      max-width: 1100px;
-      text-align: center;
     }
-
-    .images-section h2 {
-      width: 100%;
-      font-size: 2rem;
-      color: #2e4b25;
-      margin-bottom: 30px;
-    }
-
-    .images-section img {
+    .products img {
       width: 30%;
       min-width: 260px;
       border-radius: 10px;
@@ -57,30 +49,18 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
     }
-    .images-section img:hover {
+    .products img:hover {
       transform: scale(1.05);
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
-
-    .video-section {
-      max-width: 700px;
-      margin: 0 auto 60px;
-      text-align: center;
-    }
-
-    .video-section h2 {
-      font-size: 2rem;
-      color: #2e4b25;
-      font-weight: 700;
-      margin-bottom: 25px;
-    }
-
     video {
       width: 100%;
+      max-width: 700px;
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+      display: block;
+      margin: 0 auto;
     }
-
     footer {
       background-color: #c5d4b8;
       text-align: center;
@@ -91,15 +71,14 @@
       margin-top: 60px;
       user-select: none;
     }
-
     @media (max-width: 900px) {
-      .images-section img {
+      .products img {
         width: 45%;
         min-width: 200px;
       }
     }
     @media (max-width: 500px) {
-      .images-section img {
+      .products img {
         width: 90%;
         min-width: auto;
       }
@@ -108,19 +87,27 @@
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="SNH Trade Logo" class="logo" />
-    <h1>Welcome to SNH Trade</h1>
+    <img src="logo.png" alt="S&H Global Trade Logo" class="logo" />
+    <h1>Welcome to S&H Global Trade Corp.</h1>
   </header>
-
   <main>
-    <section class="images-section">
-      <h2>Our Products</h2>
-      <img src="agri_1.jpg" alt="Agriculture Product" />
-      <img src="food_1.jpg" alt="Food Product" />
-      <img src="lifestyle_1.jpg" alt="Lifestyle Product" />
+    <section>
+      <h2>Commitment to Innovation</h2>
+      <p>S&H Global Trade Corp. prioritizes continuous improvement and innovation to meet evolving market demands and enhance product offerings for customers.</p>
     </section>
-
-    <section class="video-section">
+    <section>
+      <h2>Ethical Business Practices</h2>
+      <p>The company upholds integrity and transparency in all operations, fostering trust and long-term relationships with partners and clients.</p>
+    </section>
+    <section>
+      <h2>Our Products</h2>
+      <div class="products">
+        <img src="agri_1.jpg" alt="Agriculture Product" />
+        <img src="food_1.jpg" alt="Food Product" />
+        <img src="lifestyle_1.jpg" alt="Lifestyle Product" />
+      </div>
+    </section>
+    <section>
       <h2>Introduction Video</h2>
       <video controls>
         <source src="sub_video_01.mp4" type="video/mp4" />
@@ -128,9 +115,8 @@
       </video>
     </section>
   </main>
-
   <footer>
-    <p>&copy; 2026 SNH Trade. All rights reserved.</p>
+    <p>&copy; 2026 S&H Global Trade Corp. All rights reserved.</p>
   </footer>
 </body>
 </html>
