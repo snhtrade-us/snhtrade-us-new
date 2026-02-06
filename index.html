@@ -1,155 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>S&H Global Trade Corp. - Master Plan</title>
-  <style>
-    body {
-      margin: 0; padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #121212;
-      color: #f5f5f5;
-      display: flex; justify-content: center; align-items: center;
-      min-height: 100vh;
-    }
-    .slider {
-      position: relative;
-      width: 90%;
-      max-width: 960px;
-      background-color: #1c1c1c;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 0 30px rgba(255, 215, 0, 0.9);
-    }
-    .slides {
-      display: flex;
-      transition: transform 0.7s ease-in-out;
-    }
-    .slide {
-      min-width: 100%;
-      height: 480px;
-      background-size: cover;
-      background-position: center;
-      color: #ffd700;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 50px 60px;
-      box-sizing: border-box;
-      text-shadow: 0 0 12px #000;
-    }
-    .slide h2 {
-      font-size: 3rem;
-      margin: 0 0 20px 0;
-    }
-    .slide p {
-      font-size: 1.3rem;
-      max-width: 750px;
-      line-height: 1.6;
-    }
-    .nav-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255,215,0,0.85);
-      border: none;
-      color: #1c1c1c;
-      font-size: 3rem;
-      padding: 10px 30px;
-      cursor: pointer;
-      border-radius: 8px;
-      user-select: none;
-      transition: background-color 0.3s ease;
-    }
-    .nav-btn:hover {
-      background-color: #ffd700;
-    }
-    .prev {
-      left: 25px;
-    }
-    .next {
-      right: 25px;
-    }
-    @media (max-width: 700px) {
-      .slide h2 {
-        font-size: 2rem;
-      }
-      .slide p {
-        font-size: 1rem;
-      }
-      .slide {
-        height: auto;
-        padding: 40px 30px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S&H Global Trade Corp. - Master Plan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #C5A059; --dark: #050505; --white: #ffffff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background-color: var(--dark); 
+            color: var(--white); 
+            font-family: 'Montserrat', sans-serif; 
+            height: 100vh; 
+            overflow: hidden; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+        }
+
+        /* Slide Container */
+        .slides-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+        }
+
+        .slide.active { opacity: 1; z-index: 10; }
+
+        /* Background Image Logic */
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        /* Assigning Your Images */
+        #slide1::before { background-image: url('trade_main.jpg'); } /* Replace with your video/img */
+        #slide2::before { background-image: url('it_2.jpg'); }
+        #slide3::before { background-image: url('agri_2.jpg'); }
+
+        .content-box {
+            max-width: 800px;
+            padding: 40px;
+            border-left: 4px solid var(--gold);
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        h2 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--gold); margin-bottom: 20px; }
+        p { font-size: 1.2rem; line-height: 1.6; color: #ccc; }
+
+        /* Navigation Dots */
+        .nav-dots {
+            position: absolute;
+            bottom: 40px;
+            display: flex;
+            gap: 15px;
+            z-index: 100;
+        }
+
+        .nav-dots button {
+            border: 1px solid var(--gold);
+            background-color: transparent;
+            width: 12px; height: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .nav-dots button.active {
+            background-color: var(--gold);
+            box-shadow: 0 0 10px var(--gold);
+            transform: scale(1.3);
+        }
+    </style>
 </head>
 <body>
 
-<div class="slider" tabindex="0" aria-label="S&H Global Trade Master Plan Slider">
-  <div class="slides" id="slides">
+    <div class="slides-wrapper">
+        <div class="slide active" id="slide1">
+            <div class="content-box">
+                <h2>Strategic Sourcing</h2>
+                <p>Leading the North American market through a franchised supply chain and premium quality assurance.</p>
+            </div>
+        </div>
 
-    <div class="slide" style="background-image: url('it_2.jpg');" role="group" aria-label="Innovative IT Solutions">
-      <h2>Innovative IT Solutions</h2>
-      <p>Delivering cutting-edge technology to elevate your business worldwide.</p>
+        <div class="slide" id="slide2">
+            <div class="content-box">
+                <h2>IT & Security</h2>
+                <p>Providing high-performance PC peripherals and innovative security gadgets for modern smart offices.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide3">
+            <div class="content-box">
+                <h2>Global Logistics</h2>
+                <p>Optimized distribution systems ensuring maximum profit margins and reliable delivery for all partners.</p>
+            </div>
+        </div>
+
+        <div class="nav-dots">
+            <button class="active" data-index="0"></button>
+            <button data-index="1"></button>
+            <button data-index="2"></button>
+        </div>
     </div>
 
-    <div class="slide" style="background-image: url('agri_2.jpg');" role="group" aria-label="Advanced Agricultural Products">
-      <h2>Advanced Agricultural Products</h2>
-      <p>Sustainable farming with high-quality seeds and machinery.</p>
-    </div>
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.nav-dots button');
+        let currentIndex = 0;
 
-    <div class="slide" style="background-image: url('logistics_2.jpg');" role="group" aria-label="Global Logistics Expertise">
-      <h2>Global Logistics Expertise</h2>
-      <p>Efficient supply chain solutions ensuring timely deliveries.</p>
-    </div>
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+                dots[i].classList.toggle('active', i === index);
+            });
+            currentIndex = index;
+        }
 
-  </div>
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                showSlide(parseInt(dot.dataset.index));
+            });
+        });
 
-  <button class="nav-btn prev" id="prevBtn" aria-label="Previous Slide">&#10094;</button>
-  <button class="nav-btn next" id="nextBtn" aria-label="Next Slide">&#10095;</button>
-</div>
-
-<script>
-  const slides = document.getElementById('slides');
-  const slideCount = slides.children.length;
-  let currentIndex = 0;
-
-  function showSlide(i) {
-    if(i < 0) currentIndex = slideCount - 1;
-    else if(i >= slideCount) currentIndex = 0;
-    else currentIndex = i;
-    slides.style.transform = `translateX(${-currentIndex * 100}%)`;
-  }
-
-  document.getElementById('prevBtn').addEventListener('click', () => {
-    showSlide(currentIndex - 1);
-  });
-
-  document.getElementById('nextBtn').addEventListener('click', () => {
-    showSlide(currentIndex + 1);
-  });
-
-  // 모바일 터치 스와이프 지원
-  let touchStartX = 0;
-  const swipeThreshold = 50;
-  const slider = document.querySelector('.slider');
-
-  slider.addEventListener('touchstart', e => {
-    touchStartX = e.touches[0].clientX;
-  });
-
-  slider.addEventListener('touchend', e => {
-    const touchEndX = e.changedTouches[0].clientX;
-    const diffX = touchEndX - touchStartX;
-    if(diffX > swipeThreshold) showSlide(currentIndex - 1);
-    else if(diffX < -swipeThreshold) showSlide(currentIndex + 1);
-  });
-
-  // 최초 슬라이드 표시
-  showSlide(currentIndex);
-</script>
-
+        // Auto transition every 5 seconds
+        setInterval(() => {
+            let nextIndex = (currentIndex + 1) % slides.length;
+            showSlide(nextIndex);
+        }, 5000);
+    </script>
 </body>
 </html>
